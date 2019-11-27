@@ -3,7 +3,6 @@ import { isAuthenticated } from "../auth";
 import Layout from "../core/Layout";
 import Info from "../core/LayoutDashboard";
 
-import "../css/Dashbroad.css";
 
 
 const AdminDashboard = () => {

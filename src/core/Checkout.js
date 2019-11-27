@@ -59,16 +59,29 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
                    <h5>ที่อยู่ในการจัดส่ง</h5>
                     ชื่อ {isAuthenticated() && isAuthenticated().user.firstname} นามสกุล {isAuthenticated() && isAuthenticated().user.lastname}
                     <br />
-                    <input
+                    Address: {isAuthenticated() && isAuthenticated().user.address}
+                    <br />
+                    <br />
+                    <p>                    
+                    <label>ยืนยัน
+                    </label>
+                    <label>
+              .                    </label>
+                    <label>
+                        <input
                         onChange={handleChange("address")}
                         value={isAuthenticated() && isAuthenticated().user.address}
                         type="checkbox"
                         className="form-check-input"
+                        required
                     />
-                    Address: {isAuthenticated() && isAuthenticated().user.address}
-                    <br/>
-                    <br />
-                    <br />
+                    </label></p>
+
+                     <p>
+                     
+            
+                     </p>
+                    
                     <Link to="/cart">
                         <button onClick={buy} className="btn btn-primary">checkout</button>
                     </Link>

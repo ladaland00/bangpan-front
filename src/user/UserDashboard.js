@@ -1,7 +1,6 @@
 import React from "react";
 import { isAuthenticated } from "../auth";
 import Layout from "../core/Layout";
-import "../css/Dashbroad.css";
 import Info from "../core/LayoutDashboard";
 import {Button} from "reactstrap";
 const Dashboard = () => {
@@ -9,9 +8,10 @@ const Dashboard = () => {
         user: { _id, username, firstname, lastname, email, address, phone, role }
     } = isAuthenticated();
     return (
-        <Layout title="Dashboard" description="user Dashboard">
+        <Layout title="Dashboard" description="user Dashboard">            
+
             <Info id="Content" >
-            <Button   href={`/profile/${_id}`}>Edit profile</Button>             
+
                 <div class="row">
                     <div class="col-md-2">
                         <m>Username</m>
@@ -51,6 +51,8 @@ const Dashboard = () => {
                     <div class="col-md-8">
                         <p>{phone}</p>
                     </div>
+                <Button outline color="success" href={`/profile/${_id}`}>Edit profile</Button>             
+
                 </div>
             </Info>
         </Layout>

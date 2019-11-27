@@ -97,7 +97,7 @@ const Shop = props => {
                 </div>
 
                 <div className="col">
-                    <h2 className="mb-4">Products</h2>
+                    <h2 className="mb-4">รายการสินค้า</h2>
                     <div className="row">
                         {filteredResults.map((product, i) => (
                             <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3 ">

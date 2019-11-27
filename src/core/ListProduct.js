@@ -38,7 +38,7 @@ const ListProduct = () => {
   return (
     <div className="container">
       <Search />
-      <div class="row">สินค้าจร้า</div>
+      <div class="row"><h3>รายการสินค้า</h3></div>
       <div class="row">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item">
@@ -58,7 +58,7 @@ const ListProduct = () => {
 
               {productByArrival.map((product, i) =>
                 (
-                  <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-4 my-3 ">
+                  <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-4 my-3 col-md-6  ">
                     <Card key={i} product={product} />
                   </ProductWrapper>
                 ))}

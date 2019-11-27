@@ -29,7 +29,6 @@ const Search = () => {
     }, []);
 
     const searchData = () => {
-        // console.log(search, category);
         if (search) {
             list({ search: search || undefined, category: category }).then(
                 response => {
@@ -64,10 +63,10 @@ const Search = () => {
     const searchedProducts = (results = []) => {
         return (
             <div>
-                <h2 className="mt-4 mb-4">
+                <h2 className="mt-4 mb-4 c">
                     {searchMessage(searched, results)}
                 </h2>
-                <div class="row">
+                <div class="row ">
                     {results.map((product, i) =>
                         (<ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3 ">
                             <Card key={i} product={product} />

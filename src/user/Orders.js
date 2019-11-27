@@ -3,6 +3,7 @@ import Layout from "../core/Layout";
 import { isAuthenticated } from "../auth";
 import { listOrders, getStatusValues, updateOrderStatus } from "./apiUser";
 import moment from "moment";
+import Info from "../core/LayoutDashboard";
 
 const Orders = () => {
     const [orders, setOrders] = useState([]);
@@ -35,9 +36,9 @@ const Orders = () => {
     const showOrdersLength = () => {
         if (orders.length > 0) {
             return (
-                <h1 className="text-danger display-2">
+                <h4 className="display-4">
                     Total orders: {orders.length}
-                </h1>
+                </h4>
             );
         } else {
             return <h1 className="text-danger">No orders</h1>;
@@ -72,7 +73,7 @@ const Orders = () => {
     };
     const showStatus = o => (
         <div className="form-group">
-            <h3 className="mark mb-4">Status: {o.status}</h3>
+            <h5 className="mark mb-4">Status: {o.status}</h5>
             <select
                 className="form-control"
                 onChange={e => handleStatusChange(e, o._id)}
@@ -88,24 +89,26 @@ const Orders = () => {
     );
     return (
         <Layout title="Orders">
-            <div className="row">
+                        <Info id="Content" >
+
+            <div className="row ">
                 <div className="col-md-8 offset-md-2">
                     {showOrdersLength()}
                     {orders.map((o, oIndex) => {
                         return (
-                            <div
-                                className="mt-5"
+                            <div className="row">
+                               <div
+                                className="mt-4"
                                 key={oIndex}
-                                style={{ borderBottom: "5px solid indigo" }}
+                                style={{ borderBottom: "4px solid indigo" }}
                             >
-                                <h2 className="mb-5">
-                                    <span className="primary">
-                                        Order ID: {o._id}
-                                    </span>
-                                </h2>
+                              
+                                <ul className="list-group mb-2"> 
 
-                                <ul className="list-group mb-2">
-                                    <li className="list-group-item">
+                                    <li className="list-group-item">   
+                                <h4>
+                                        Order ID: {o._id}
+                                </h4>
                                         {showStatus(o)}
                                     </li>
                                     <li className="list-group-item">
@@ -135,19 +138,22 @@ const Orders = () => {
                                         {/* {JSON.stringify(o)} */}
                                         {showInput("Product name", p.name)}
                                         {showInput("Product Id", p._id)}
-                                        {/* {showInput("Product ownername", p.ownername.username)}
-                                        {showInput("Product firstname", p.ownername.firstname)}
+                                        {/*{showInput("Product ownername", p.ownername)}
+                                        showInput("Product firstname", p.ownername.firstname)}
                                         {showInput("Product lastname", p.ownername.lastname)}
                                         {showInput("Product address", p.ownername.address)}
-                                        {showInput("Product phone", p.ownername.phone)} */}
+                                        {showInput("Product phone", p.ownername.phone)*/} 
 
                                     </div>
                                 ))}
                             </div>
-                        );
+                       
+                            </div>
+                              );
                     })}
                 </div>
             </div>
+            </Info>
         </Layout>
     );
 };

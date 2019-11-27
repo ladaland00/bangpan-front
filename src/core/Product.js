@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
   },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
+    padding: theme.spacing(4, 0, 3),
   },
   heroButtons: {
     marginTop: theme.spacing(4),
@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: theme.spacing(8),
   },
   card: {
-    height: '500px',
+    height: '400px',
     display: 'flexDirection',
     flexDirection: 'column',
   },
@@ -106,14 +106,14 @@ const Product = props => {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
+    <React.Fragment className="">
       <Layout>
         <CssBaseline />
         <main>
           {/* Hero unit */}
           <div className={classes.heroContent}>
             <Container maxWidth="ms">
-              <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+              <Typography component="h3" variant="h3" align="center" color="textPrimary" gutterBottom>
                 {product.name}
               </Typography>
 
@@ -123,7 +123,7 @@ const Product = props => {
             {/* End hero unit */}
             <Grid container spacing={5} alignItems="center" justify="center">
               {cards.map(card => (
-                <Grid item key={card} xs={10} sm={10} md={10}>
+                <Grid item key={card} xs={5} sm={5} md={5}>
                   <Card className={classes.card}>
                     <ShowImage item={product} url="products"
                     />
@@ -132,20 +132,22 @@ const Product = props => {
               ))}
             </Grid><FormGroup  >
               <Label for="discription">
-                Description          <br />
+              <h6>Description</h6>
                 {product.description}
               </Label>
               <p className="Category">
-                Category:
-           <br />{product.category && product.category.name}
+                <h6>Category</h6>
+          {product.category && product.category.name}
               </p>
               <p className="ownername">
-                ownername: {product.ownername && product.ownername.username}
+              <h6>ownername: </h6>{product.ownername && product.ownername.username}
               </p>
               <text for="date">
                 <br />
-                Added on {moment(product.createdAt).fromNow()}
+                Added on
+                 {moment(product.createdAt).fromNow()}
               </text>
+              <br />
               <br />
               <Button classname={classes.cen} color="info" href="/">Return to home</Button> {'  '}
               <Button onClick={addToCart} color="success" >Add to cart</Button>

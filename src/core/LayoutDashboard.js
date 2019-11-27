@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import { isAuthenticated } from "../auth";
-import "../css/Dashbroad.css";
 
 
 const AdminDashboard = ({
@@ -25,6 +24,7 @@ const AdminDashboard = ({
                             {role === 0 && (<Fragment>
                                 <a href="/user/dashboard">ข้อมูลส่วนตัว</a><br />
                                 <a href="/user/orders">history</a><br />
+                                <a href="/create/product">Upload Product</a><br />
                             </Fragment>
                             )}
 
@@ -33,7 +33,7 @@ const AdminDashboard = ({
                     <div class="col-lg-10 ">
                         <div class="new-profile-work ">
                             <div class="row-md-4">
-                                <h5>{firstname}  {lastname}</h5>
+                                <h4>{firstname}  {lastname}</h4>
                                 {role === 1 ? "Admin" : "Registered User"}
                                 <br />
                                 <br />

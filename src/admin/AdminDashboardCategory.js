@@ -3,7 +3,6 @@ import Layout from "../core/Layout";
 import Info from "../core/LayoutDashboard";
 import addCategory from "./AddCategory";
 
-import "../css/Dashbroad.css";
 
 
 const AdminDashboard = () => {

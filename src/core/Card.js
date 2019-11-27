@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button } from "reactstrap";
 import ShowImage from "./ShowImage";
 import { isAuthenticated } from "../auth";
-
 import { Link, Redirect } from "react-dom";
 import { addItem, removeItem } from "./apiCart";
 

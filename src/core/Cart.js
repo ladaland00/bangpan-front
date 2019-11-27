@@ -45,7 +45,7 @@ const Cart = () => {
         </div>
 
         <div className="col-6">
-          <h2 className="mb-4">Your cart </h2>
+          <h2 className="mb-4 ">Your cart </h2>
           <hr />
           {/* {JSON.stringify(items)} */}
           <Checkout products={items} setRun={setRun} run={run} />

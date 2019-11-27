@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import { isAuthenticated } from "../auth";
 import { Link } from "react-router-dom";
 import { createProduct, getCategories } from "./apiUser";
-import { readUser } from "../auth/index";
 
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+
+import styled from "styled-components";
+
+
 
 const AddProduct = props => {
     const { user, token } = isAuthenticated();
@@ -77,7 +80,7 @@ const AddProduct = props => {
     };
 
     const newPostForm = () => (
-        <Form className="mb-3" onSubmit={clickSubmit}>
+        <Form className="App" onSubmit={clickSubmit}>
             <br />
             <FormGroup row>
                 <Label for="name" sm={3}>ชื่อสินค้า</Label>
@@ -188,3 +191,32 @@ const AddProduct = props => {
 };
 
 export default AddProduct;
+
+const ProductWrapper = styled.div`
+  
+  .troll{
+    background: "BLACK";
+    border-top: transparent;
+    transition: all 1s linear;
+  }
+  .cart-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.2rem 0.4rem;
+    background: var(--lightBlue);
+    border: none;
+    color: var(--mainWhite);
+    font-size: 1.4rem;
+    border-radius: 0.5rem 0 0 0;
+    transform: translate(100%, 100%);
+    transition: all 1s ease-in-out;
+  }
+  .img-container:hover .cart-btn {
+    transform: translate(0, 0);
+  }
+  .cart-btn:hover {
+    color: var(--mainBlue);
+    cursor: pointer;
+  }
+`;

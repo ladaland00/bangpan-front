@@ -105,8 +105,10 @@ const Profile = ({ match }) => {
         address,
         phone) => (
         <form>
-            <div className="form-group">
-                <label className="text-muted">LsatName</label>
+            <div className="row">
+            <div className="form-group "></div>
+             <div className="form-group col-3">
+                <label className="text-muted">Firstname</label>
                 <input
                     type="text"
                     onChange={handleChange("firstname")}
@@ -114,16 +116,18 @@ const Profile = ({ match }) => {
                     value={firstname}
                 />
             </div>
-            <div className="form-group">
-                <label className="text-muted">FirstName</label>
+            <div className="form-group col-3">
+                <label className="text-muted">Lastname</label>
                 <input
                     type="text"
                     onChange={handleChange("lastname")}
                     className="form-control"
                     value={lastname}
                 />
+            </div>   
             </div>
-            <div className="form-group">
+            
+            <div className="form-group col-6">
                 <label className="text-muted">Email</label>
                 <input
                     type="email"
@@ -132,7 +136,7 @@ const Profile = ({ match }) => {
                     value={email}
                 />
             </div>
-            <div className="form-group">
+            <div className="form-group col-6">
                 <label className="text-muted">Username</label>
                 <input
                     type="text"
@@ -141,7 +145,7 @@ const Profile = ({ match }) => {
                     value={username}
                 />
             </div>
-            <div className="form-group">
+            <div className="form-group col-6">
                 <label className="text-muted">Password</label>
                 <input
                     type="password"
@@ -150,21 +154,21 @@ const Profile = ({ match }) => {
                     value={password}
                 />
             </div>
-            <div className="form-group">
+            <div className="form-group col-6">
                 <label className="text-muted">Address</label>
                 <input
-                    type="text"
+                    type="textarea"
                     onChange={handleChange("address")}
                     className="form-control"
                     value={address}
                 />
             </div>
-            <div className="form-group">
+            <div className="form-group col-3">
                 <label className="text-muted">Phone</label>
                 <input
                     min="9" 
                     max="10"
-                    type="number"
+                    type="phone"
                     onChange={handleChange("phone")}
                     className="form-control"
                     value={phone}
@@ -182,8 +186,8 @@ const Profile = ({ match }) => {
             title="Profile"
         >
                         <Info id="Content" >
-
-            <h2 className="mb-4">Profile update</h2>
+        <div className="col "></div>
+            <h4 className="mb-4">แก้ไขข้อมูลส่วนตัว</h4>
             {profileUpdate(        
                 firstname,
                 lastname,

@@ -1,0 +1,51 @@
+.App {
+    text-align: center;
+    background-color: #96addb;  ;
+    }
+    
+    .App-logo {
+    height: 40vmin;
+    }
+    
+    .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    }
+    
+    .App-link {
+    color: #09d3ac;
+    }
+    
+    ul.money {
+    list-style: none;
+    float: left;
+    }
+    
+    li {
+    float: left;
+    padding: 30px;
+    margin: 0;
+    }
+    
+    .companylist {
+    border: thin solid blue;
+    padding: 2rem;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    }
+    
+    .companylisttext {
+    position: relative;
+    top: -47px;
+    background: #09d3ac;
+    padding: 7px;
+    width: 106px;
+    color: blue;
+    }
